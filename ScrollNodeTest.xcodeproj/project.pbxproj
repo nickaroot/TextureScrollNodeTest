@@ -8,22 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		C38A9EDB240185F80056C4F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A9EDA240185F80056C4F6 /* AppDelegate.swift */; };
-		C38A9EDD240185F80056C4F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A9EDC240185F80056C4F6 /* SceneDelegate.swift */; };
-		C38A9EDF240185F80056C4F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A9EDE240185F80056C4F6 /* ViewController.swift */; };
-		C38A9EE2240185F80056C4F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38A9EE0240185F80056C4F6 /* Main.storyboard */; };
 		C38A9EE4240185F90056C4F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38A9EE3240185F90056C4F6 /* Assets.xcassets */; };
 		C38A9EE7240185F90056C4F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38A9EE5240185F90056C4F6 /* LaunchScreen.storyboard */; };
+		C38A9EF224018A620056C4F6 /* TestNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A9EF124018A620056C4F6 /* TestNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C38A9ED7240185F80056C4F6 /* ScrollNodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollNodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38A9EDA240185F80056C4F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C38A9EDC240185F80056C4F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C38A9EDE240185F80056C4F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C38A9EE1240185F80056C4F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C38A9EE3240185F90056C4F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C38A9EE6240185F90056C4F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C38A9EE8240185F90056C4F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C38A9EF124018A620056C4F6 /* TestNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				C38A9EDA240185F80056C4F6 /* AppDelegate.swift */,
-				C38A9EDC240185F80056C4F6 /* SceneDelegate.swift */,
-				C38A9EDE240185F80056C4F6 /* ViewController.swift */,
-				C38A9EE0240185F80056C4F6 /* Main.storyboard */,
+				C38A9EF124018A620056C4F6 /* TestNode.swift */,
 				C38A9EE3240185F90056C4F6 /* Assets.xcassets */,
 				C38A9EE5240185F90056C4F6 /* LaunchScreen.storyboard */,
 				C38A9EE8240185F90056C4F6 /* Info.plist */,
@@ -74,6 +68,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C38A9EEB240185F90056C4F6 /* Build configuration list for PBXNativeTarget "ScrollNodeTest" */;
 			buildPhases = (
+				C38A9EEE2401877B0056C4F6 /* Carthage */,
 				C38A9ED3240185F80056C4F6 /* Sources */,
 				C38A9ED4240185F80056C4F6 /* Frameworks */,
 				C38A9ED5240185F80056C4F6 /* Resources */,
@@ -127,34 +122,47 @@
 			files = (
 				C38A9EE7240185F90056C4F6 /* LaunchScreen.storyboard in Resources */,
 				C38A9EE4240185F90056C4F6 /* Assets.xcassets in Resources */,
-				C38A9EE2240185F80056C4F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C38A9EEE2401877B0056C4F6 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AsyncDisplayKit.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AsyncDisplayKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C38A9ED3240185F80056C4F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C38A9EDF240185F80056C4F6 /* ViewController.swift in Sources */,
+				C38A9EF224018A620056C4F6 /* TestNode.swift in Sources */,
 				C38A9EDB240185F80056C4F6 /* AppDelegate.swift in Sources */,
-				C38A9EDD240185F80056C4F6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C38A9EE0240185F80056C4F6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C38A9EE1240185F80056C4F6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C38A9EE5240185F90056C4F6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,9 +291,12 @@
 		C38A9EEC240185F90056C4F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = ScrollNodeTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,16 +304,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nickaroot.ScrollNodeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C38A9EED240185F90056C4F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = ScrollNodeTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.nickaroot.ScrollNodeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
